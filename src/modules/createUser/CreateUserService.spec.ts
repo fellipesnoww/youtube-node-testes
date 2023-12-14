@@ -3,11 +3,11 @@ import { UsersRepositoryInMemory } from "../../repositories/in-memory/UsersRepos
 import { IUsersRepository } from "../../repositories/IUsersRepositories";
 import { CreateUserService } from "./CreateUserService";
 
-describe("Create user", () => {
+describe("Create user", () => { //Describe scenario of tests
   let usersRepository: IUsersRepository;
   let createUserService: CreateUserService;
 
-  beforeAll(() => {
+  beforeAll(() => { //Before all tests, create a instance of repository and service
     usersRepository = new UsersRepositoryInMemory();
     createUserService = new CreateUserService(usersRepository);
   });

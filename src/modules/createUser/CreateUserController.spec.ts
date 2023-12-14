@@ -11,7 +11,7 @@ describe("Create User Controller", () => {
       username: "test-integration",
       email: "testIntegration@test.com.br",
       name: "Test Integration",
-    });
+    }); //Simulate a post calling to route /users 
 
     expect(response.status).toBe(200);
     expect(response.body).toHaveProperty("id");
@@ -22,13 +22,13 @@ describe("Create User Controller", () => {
       username: "test-integration-exist",
       email: "testIntegrationExisting@test.com.br",
       name: "Test Integration Exist User",
-    });
+    }); //Create new user 
 
     const response = await request(app).post("/users").send({
       username: "test-integration-exist",
       email: "testIntegrationExisting@test.com.br",
       name: "Test Integration Exist User",
-    });
+    }); //Create same user but getting response to check in expect
 
     expect(response.status).toBe(400);
   });
